@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">tauri-sqlite-example</string>
+    <string name="main_activity_title">tauri-sqlite-example</string>
+</resources>
