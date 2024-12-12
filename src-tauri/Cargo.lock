@@ -3499,6 +3499,8 @@ dependencies = [
  "sqlformat",
  "thiserror 1.0.69",
  "time",
+ "tokio",
+ "tokio-stream",
  "tracing",
  "url",
 ]
@@ -3538,6 +3540,7 @@ dependencies = [
  "sqlx-sqlite",
  "syn 2.0.90",
  "tempfile",
+ "tokio",
  "url",
 ]
 
@@ -4237,6 +4240,17 @@ dependencies = [
  "pin-project-lite",
  "socket2",
  "windows-sys 0.52.0",
+]
+
+[[package]]
+name = "tokio-stream"
+version = "0.1.17"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "eca58d7bba4a75707817a2c44174253f9236b2d5fbd055602e9d5c07c139a047"
+dependencies = [
+ "futures-core",
+ "pin-project-lite",
+ "tokio",
 ]
 
 [[package]]
