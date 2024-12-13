@@ -12,21 +12,29 @@ type User = {
 function App() {
   const [greetMsg, setGreetMsg] = useState("");
   const [name, setName] = useState("");
-  const [user, setUser] = useState("");
+  const [reactUser, setReactUser] = useState("");
+  const [rustUser, setRustUser] = useState("");
 
   async function greet() {
     // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
     setGreetMsg(await invoke("greet", { name }));
   }
 
-  async function getDbValue(e: MouseEvent<HTMLButtonElement>): Promise<void> {
+  async function getDbValueInReact(e: MouseEvent<HTMLButtonElement>): Promise<void> {
       e.preventDefault();
+      // It's not necessary in this code, but you can also access the file location with Path API in TypeScript.
+      // https://v2.tauri.app/reference/javascript/api/namespacepath/#appdatadir
       const db = await Database.load("sqlite:mydatabase.db");
 
       const result = await db.select<User[]>("SELECT name FROM users LIMIT 1");
       const firstUserName = result.length > 0 ? result[0].name : "No user found";
-      setUser(firstUserName);
+      setReactUser(firstUserName);
   }
+
+  async function getDbValueInRust(e: MouseEvent<HTMLButtonElement>): Promise<void> {
+    e.preventDefault();
+    setRustUser(await invoke("get_db_value", {}));
+}
 
   return (
     <main className="container">
@@ -61,8 +69,10 @@ function App() {
       </form>
       <p>{greetMsg}</p>
 
-      <button onClick={(e) => getDbValue(e)}>Get DB value from React</button>
-      { user && <p>{user} from React!</p>}
+      <button onClick={(e) => getDbValueInReact(e)}>Get DB value from React</button>
+      { reactUser && <p>{reactUser} from React!</p>}
+      <button onClick={(e) => getDbValueInRust(e)}>Get DB value from React</button>
+      { rustUser && <p>{rustUser} from Rust!</p>}
     </main>
   );
 }
