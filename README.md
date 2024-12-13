@@ -1,7 +1,25 @@
-# Tauri + React + Typescript
+# Tauri v2 + Tauri Plugin SQL: SQLite Connection Examples in TypeScript & Rust
 
-This template should help get you started developing with Tauri, React and Typescript in Vite.
+## What's this?
+The official documentation explains how to connect to the database from TypeScript using a plugin, but there's no example for connecting from Rust! So, I wrote it in this repository.
 
-## Recommended IDE Setup
+- Migration: Tauri Plugin SQL
+- Database Connection from TypeScript: Tauri Plugin SQL (This uses sqlx internally.)
+- Database Connection from Rust: sqlx
 
-- [VS Code](https://code.visualstudio.com/) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer)
+## References
+https://v2.tauri.app/plugin/sql/
+
+
+## Memo
+
+```
+For Desktop development, run
+  npm run tauri dev
+
+For Android development, run:
+  npm run tauri android dev
+
+For iOS development, run:
+  npm run tauri ios dev
+```
