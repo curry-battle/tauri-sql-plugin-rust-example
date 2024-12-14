@@ -23,3 +23,9 @@ For Android development, run:
 For iOS development, run:
   npm run tauri ios dev
 ```
+
+## Impression
+
+While tauri-plugin-sql is convenient for tasks like migrations during app initialization or connecting to the database from TypeScript, I felt that it's not strictly necessary if you're only connecting to the database from Rust.  
+As introduced on the site below, it might be better to handle both migrations and connections independently using tools like sqlx (or Diesel).  
+https://www.ey-office.com/blog_archive/2024/08/27/learned-rust-so-i-wrote-a-backend-for-tauri/
