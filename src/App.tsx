@@ -71,7 +71,7 @@ function App() {
 
       <button onClick={(e) => getDbValueInReact(e)}>Get DB value from React</button>
       { reactUser && <p>{reactUser} from React!</p>}
-      <button onClick={(e) => getDbValueInRust(e)}>Get DB value from React</button>
+      <button onClick={(e) => getDbValueInRust(e)}>Get DB value from Rust</button>
       { rustUser && <p>{rustUser} from Rust!</p>}
     </main>
   );
